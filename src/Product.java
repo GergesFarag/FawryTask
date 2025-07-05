@@ -13,9 +13,6 @@ public abstract class Product {
     public void reduceQuantity(int qty) {
         quantity -= qty;
     }
-    public void increaseQuantity(int qty) {
-        quantity += qty;
-    }
     public int getQuantity() {
         return quantity;
     }
