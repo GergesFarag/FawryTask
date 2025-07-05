@@ -1,4 +1,6 @@
-class NonExpProduct extends Product {
+package Classes;
+
+public class NonExpProduct extends Product {
     public NonExpProduct(String name, double price, int quantity) {
         super(name, price, quantity);
     }

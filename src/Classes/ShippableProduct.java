@@ -1,4 +1,8 @@
-class ShippableProduct extends Product implements Shippable {
+package Classes;
+
+import Models.Shippable;
+
+public class ShippableProduct extends Product implements Shippable {
     private double weight;
     private boolean isExpired;
     public ShippableProduct(String name, double price, int quantity, double weight ,boolean isExpired) {

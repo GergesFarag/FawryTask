@@ -1,7 +1,11 @@
-class Checkout {
+package Classes;
+
+import Services.ShippingService;
+
+public class Checkout {
     public static void checkout(Customer customer, Cart cart) {
         if (cart.isEmpty()) {
-            throw new IllegalStateException("Cart is empty");
+            throw new IllegalStateException("Classes.Cart is empty");
         }
 
         double subtotal = cart.calculateSubtotal();
@@ -9,16 +13,16 @@ class Checkout {
         double total = subtotal + shipping;
 
         if (!customer.canPay(total)) {
-            throw new IllegalStateException("Customer's balance is insufficient");
+            throw new IllegalStateException("Classes.Customer's balance is insufficient");
         }
 
         ShippingService.ship(cart.getShippableItems());
         customer.addHistory(cart);
-        System.out.println("** Checkout receipt **");
+        System.out.println("** Classes.Checkout receipt **");
         for (CartProduct item : cart.getItems()) {
             System.out.printf("%dx %s\t%.1f$%n", item.getQuantity(), item.getProduct().getName(), item.getTotalPrice());
         }
-        System.out.printf("----------------------%nSubtotal\t%.0f%nShipping\t%.0f%nAmount\t%.0f%n Process Done Successfully\n",
+        System.out.printf("----------------------%nSubtotal\t%.0f$%nShipping\t%.0f$%nAmount\t%.0f$%n Process Done Successfully\n",
                 subtotal, shipping, total);
 
         customer.pay(total);

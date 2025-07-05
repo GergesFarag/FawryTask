@@ -1,12 +1,16 @@
+package Classes;
+
+import Models.Shippable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-class Cart {
+public class Cart {
     private final List<CartProduct> products = new ArrayList<>();
 
     public void addProduct(Product product, int qty) {
         if (product.isExpired()) {
-            throw new IllegalArgumentException("Expired Product");
+            throw new IllegalArgumentException("Expired Classes.Product");
         }
 
         if (!product.isAvailable(qty)) {

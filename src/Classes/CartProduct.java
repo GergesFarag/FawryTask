@@ -1,3 +1,7 @@
+package Classes;
+
+import Models.Shippable;
+
 class CartProduct {
     Product product;
     int quantity;

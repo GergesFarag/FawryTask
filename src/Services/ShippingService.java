@@ -1,8 +1,10 @@
+package Services;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-class ShippingService {
+import Models.Shippable;
+public class ShippingService {
     public static void ship(List<Shippable> items) {
         double totalWeight = 0;
         if (items.isEmpty()) return;

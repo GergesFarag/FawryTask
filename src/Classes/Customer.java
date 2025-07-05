@@ -1,6 +1,8 @@
+package Classes;
+
 import java.util.Stack;
 
-class Customer {
+public class Customer {
     private String name;
     private double balance;
     private Stack<Cart> cartHistory;
@@ -40,6 +42,6 @@ class Customer {
             System.out.println("History is Empty!");
         else
             cartHistory.forEach(cart ->
-                    System.out.printf("----------------------\nCart Identifier : %s\nCart Products Quantity : %s products\nCart Total Price : %.1f$%n----------------------\n", cart, cart.getItems().size(), cart.getTotalCartPrice()));
+                    System.out.printf("----------------------\nClasses.Cart Identifier : %s\nClasses.Cart Products Quantity : %s products\nClasses.Cart Total Price : %.1f$%n----------------------\n", cart, cart.getItems().size(), cart.getTotalCartPrice()));
     }
 }
